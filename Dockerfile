@@ -17,5 +17,7 @@ ENV PATH ${PATH}:/opt/tools
 
 RUN echo y | android update sdk --all --force --no-ui --filter 2,6,7,28,102,137,136,138,144,145
 
+ADD ./jenkins_home /var/jenkins_home
+
 # Cleaning
 RUN apt-get clean
