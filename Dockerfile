@@ -17,6 +17,10 @@ ENV PATH ${PATH}:/opt/tools
 
 RUN echo y | android update sdk --all --force --no-ui --filter 2,6,7,28,102,137,136,138,144,145
 
+RUN apt-get install -y curl build-essential
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN apt-get -y install nodejs
+
 ADD ./jenkins_home /var/jenkins_home
 
 # Cleaning
